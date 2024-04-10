@@ -40,7 +40,7 @@ void queen () {
             if (j == N) {
                 // 找到�? N 皇后的一组解
                 answer = answer + 1;
-                printf("answer%d: ", answer);
+                printf("answer%d ", answer);
 
                 for (i = 1; i <= N; i++) {
                     printf("%d ", q[i]);

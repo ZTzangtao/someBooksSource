@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define N 7
+#define N 4
 
 int q[N + 1]; // 存储皇后的列�?
 

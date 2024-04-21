@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+#include <sched.h>
 
 
 void mergeSort(int a[], int p, int r) {

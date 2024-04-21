@@ -1,18 +1,7 @@
 #include <stdio.h>
-#include <sched.h>
+// #include <sched.h>
 
-
-void mergeSort(int a[], int p, int r) {
-    int q;
-    if (p < r) {
-        q = (p + r) / 2;
-        mergeSort(a, p, q);
-        mergeSort(a, q + 1, r);
-        merge(a,p, q, r);
-    }
-}
-
-void merge(int A[], int p, int q, int r) {
+void Merge1(int A[], int p, int q, int r) {
     int n1 = q - p + 1, n2 = r - q, i, j, k;
     int L[50], R[50];
     for (i = 0; i < n1; i++) {
@@ -21,8 +10,8 @@ void merge(int A[], int p, int q, int r) {
     for (j = 0; j < n2; j++) {
         R[j] = A[q + j +1];
     }
-    L[n1] = INT_MAX;
-    R[n2] = INT_MAX;
+    L[n1] = 5000;
+    R[n2] = 5000;
     i = 0;
     j = 0;
     for (k = p; k < r + 1; k++) {
@@ -34,4 +23,26 @@ void merge(int A[], int p, int q, int r) {
             j++;
         }
     }
+}
+
+void mergeSort(int A[], int p, int r) {
+    int q;
+    if (p < r) {
+        q = (p + r) / 2;
+        mergeSort(A, p, q);
+        mergeSort(A, q + 1, r);
+        Merge1(A, p, q, r);
+    }
+}
+
+
+
+int main() {
+    int A[] = {4, 1, 3, 45, 46, 5};
+    mergeSort(A, 0, 5);
+    int i;
+    for (i = 0; i <= 5; i++) {
+        printf("%d ", A[i]);
+    }
+    return 0;
 }

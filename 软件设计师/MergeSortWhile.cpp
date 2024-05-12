@@ -16,6 +16,7 @@ void Merge1(int A[], int p, int q, int r) {
     j = 0;
     for (k = p; k < r + 1; k++) {
         if (L[i] < R[j]) {
+            // 小的放前面
             A[k] = L[i];
             i++;
         } else {
